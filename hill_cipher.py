@@ -97,7 +97,7 @@ def plot_double_histogram_sorted(char_count, char_count_encrypted, title, xlabel
 
 def main():
     global used_alphabet, alphabet_length, key_matrix  # Додаємо глобальні змінні
-    filename = input("Введіть назву файлу (наприклад, 'file.txt'): ")
+    filename = input("Введіть назву фай óлу (наприклад, 'file.txt'): ")
     try:
         with open(filename, encoding='utf-8') as file:
             file_content = file.read()
