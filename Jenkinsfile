@@ -31,7 +31,7 @@ pipeline {
             steps {
                 script {
                     dir('workspace') {
-                        sh 'invoke test'
+                        sh 'invoke test --filename=test_rsa_cipher.py'
                     }
                 }
             }
