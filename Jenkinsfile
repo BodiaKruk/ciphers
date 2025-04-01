@@ -44,14 +44,5 @@ pipeline {
                 }
             }
         }
-        stage('Run') {
-            steps {
-                script {
-                    dir('workspace') {
-                        bat 'invoke run'
-                    }
-                }
-            }
-        }
     }
 }
