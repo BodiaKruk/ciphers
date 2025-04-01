@@ -5,6 +5,8 @@ import matplotlib.pyplot as plt
 from collections import Counter
 import random
 
+used_alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ .,;-"  # або ваш алфавіт
+
 # Функція для попередньої обробки тексту
 def preprocess_text(text, alphabet):
     return ''.join([char for char in text if char in alphabet])
