@@ -21,7 +21,7 @@ pipeline {
             steps {
                 script {
                     dir('workspace') {
-                        bat 'invoke clean main.py'
+                        bat 'invoke clean'
                     }
                 }
             }
@@ -30,7 +30,7 @@ pipeline {
             steps {
                 script {
                     dir('workspace') {
-                        bat 'invoke test test_rsa_cipher.py'
+                        bat 'invoke test'
                     }
                 }
             }
