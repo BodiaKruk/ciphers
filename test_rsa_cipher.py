@@ -10,6 +10,8 @@ from rsa_cipher import decrypt_block
 from rsa_cipher import preprocess_text
 from rsa_cipher import find_ngrams
 
+used_alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ .,;-"  # або ваш алфавіт
+
 class TestCharToNum(unittest.TestCase):
     def test_char_to_num(self):
         self.assertEqual(char_to_num('A'), 0)
