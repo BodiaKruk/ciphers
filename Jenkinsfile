@@ -4,6 +4,7 @@ pipeline {
         stage('Clone Repository') {
             steps {
                 script {
+                    bat 'if exist workspace rmdir /s /q workspace'
                     bat 'git clone https://github.com/BodiaKruk/ciphers.git workspace'
                     dir('workspace') {
                     }
