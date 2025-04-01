@@ -6,6 +6,7 @@ from collections import Counter
 import random
 
 used_alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ .,;-"  # або ваш алфавіт
+alphabet_length = len(used_alphabet)
 
 # Функція для попередньої обробки тексту
 def preprocess_text(text, alphabet):
