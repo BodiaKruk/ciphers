@@ -4,9 +4,9 @@ pipeline {
         stage('Clone Repository') {
             steps {
                 script {
-                    sh 'git clone https://github.com/BodiaKruk/ciphers.git workspace'
+                    bat 'git clone https://github.com/BodiaKruk/ciphers.git workspace'
                     dir('workspace') {
-                        sh 'ls -la'  // Переконуємося, що файли завантажені
+                        bat 'ls -la'  // Переконуємося, що файли завантажені
                     }
                 }
             }
@@ -14,7 +14,7 @@ pipeline {
         stage('Setup Python Environment') {
             steps {
                 script {
-                    sh 'pip install --user invoke'
+                    bat 'pip install --user invoke'
                 }
             }
         }
@@ -22,7 +22,7 @@ pipeline {
             steps {
                 script {
                     dir('workspace') {
-                        sh 'invoke clean'
+                        bat 'invoke clean'
                     }
                 }
             }
@@ -31,7 +31,7 @@ pipeline {
             steps {
                 script {
                     dir('workspace') {
-                        sh 'invoke test --filename=test_rsa_cipher.py'
+                        bat 'invoke test --filename=test_rsa_cipher.py'
                     }
                 }
             }
@@ -40,7 +40,7 @@ pipeline {
             steps {
                 script {
                     dir('workspace') {
-                        sh 'invoke build --filename=main.py'
+                        bat 'invoke build --filename=main.py'
                     }
                 }
             }
@@ -49,7 +49,7 @@ pipeline {
             steps {
                 script {
                     dir('workspace') {
-                        sh 'invoke run'
+                        bat 'invoke run'
                     }
                 }
             }
