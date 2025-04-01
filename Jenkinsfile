@@ -39,7 +39,7 @@ pipeline {
             steps {
                 script {
                     dir('workspace') {
-                        bat 'invoke build main.py'
+                        bat 'invoke build'
                     }
                 }
             }
@@ -48,7 +48,7 @@ pipeline {
             steps {
                 script {
                     dir('workspace') {
-                        bat 'invoke run main.py'
+                        bat 'invoke run'
                     }
                 }
             }
