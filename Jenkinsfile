@@ -13,7 +13,7 @@ pipeline {
         stage('Setup Python Environment') {
             steps {
                 script {
-                    bat 'pip install --user invoke'
+                    bat 'pip install invoke'
                 }
             }
         }
@@ -21,7 +21,7 @@ pipeline {
             steps {
                 script {
                     dir('workspace') {
-                        bat 'invoke clean'
+                        bat 'invoke clean main.py'
                     }
                 }
             }
@@ -30,7 +30,7 @@ pipeline {
             steps {
                 script {
                     dir('workspace') {
-                        bat 'invoke test --filename=test_rsa_cipher.py'
+                        bat 'invoke test test_rsa_cipher.py'
                     }
                 }
             }
@@ -39,7 +39,7 @@ pipeline {
             steps {
                 script {
                     dir('workspace') {
-                        bat 'invoke build --filename=main.py'
+                        bat 'invoke build main.py'
                     }
                 }
             }
@@ -48,7 +48,7 @@ pipeline {
             steps {
                 script {
                     dir('workspace') {
-                        bat 'invoke run'
+                        bat 'invoke run main.py'
                     }
                 }
             }
