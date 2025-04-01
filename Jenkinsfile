@@ -6,7 +6,6 @@ pipeline {
                 script {
                     bat 'git clone https://github.com/BodiaKruk/ciphers.git workspace'
                     dir('workspace') {
-                        bat 'ls -la'  // Переконуємося, що файли завантажені
                     }
                 }
             }
